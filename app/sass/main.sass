@@ -1,0 +1,919 @@
+@import config
+
+// CUSTOM USER STYLES & IMPORTS
+
+.h1,
+.h2,
+.h3
+    color: $haiti
+
+
+.ul
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+.hidden
+    display: none
+
+.no-scroll
+    height: 100%
+    overflow: hidden
+
+
+.anchor
+    display: block
+    position: relative
+    top: -250px
+    visibility: hidden
+
+
+.burger
+    bottom: 0
+    height: 28px
+    left: 0
+    margin: auto
+    position: absolute
+    right: 0
+    top: 28px
+    width: 28px
+
+    &__top
+        background: $black
+        border: 0
+        border-radius: 4px
+        height: 3px
+        position: relative
+        top: 0
+        transition: transform .2s, top .2s
+        transition-delay: .2s, 0s
+        width: 28px
+
+    &__center
+        background: $black
+        border: 0
+        border-radius: 4px
+        height: 3px
+        position: relative
+        top: 6.6px
+        transition: transform .2s, top .2s
+        transition-delay: .2s, 0s
+        width: 28px
+
+    &__bottom
+        background: $black
+        border: 0
+        border-radius: 4px
+        height: 3px
+        position: relative
+        top: 13.5px
+        transition: transform .5s, top .2s
+        transition-delay: .1s
+        width: 28px
+
+
+    &--active
+
+        .burger
+
+            &__top
+                background: $black
+                top: 9px
+                transform: rotate(-45deg)
+
+            &__center
+                background: $black
+                top: 6px
+                transform: rotate(45deg)
+
+            &__bottom
+                opacity: 0
+                top: 0
+                transform: rotate(30deg)
+
+
+//Header
+
+.header
+    align-items: center
+    display: flex
+    justify-content: space-between
+    padding-bottom: 25px
+    padding-top: 25px
+    position: relative
+
+    &__btn
+        background: 0
+        border: 0
+        display: none
+        height: 60px
+        position: absolute
+        right: 20px
+        top: 0
+        width: initial
+        z-index: 200
+
+        span
+            display: block
+
+
+.button
+    background: $white
+    border: 1px solid transparent
+    border-radius: 20px
+    font-weight: 700
+    padding: 7px 30px
+    transition: .25s color ease, .25s background ease
+
+    &__sign-in
+        &:hover,
+        &:active,
+        &:focus
+            color: $accent
+
+    &__sign-up
+        border: 2px solid $accent
+        color: $accent
+
+        &:hover,
+        &:active,
+        &:focus
+            background: $accent
+            color: $white
+
+.menu
+    align-content: center
+    display: flex
+    justify-content: space-between
+    list-style: none
+    margin: 0
+    padding: 0
+
+    &__item
+        padding:  0 10px
+
+    &__link
+        color: $black
+        transition: .25s color ease
+
+        &:hover,
+        &:active,
+        &:focus
+            color: $accent
+            text-decoration: none
+
+
+
+//Main
+
+//Start
+.start
+    padding: 70px 0
+
+    &__text
+        padding-top: 40px
+
+    &__title
+        font-size: 50px
+        font-weight: 500
+        line-height: 70px
+
+    &__desc
+        font-size: 18px
+        margin-top: 20px
+
+    &__link
+        background: $accent
+        border: 3px solid $accent
+        border-radius: 10px
+        box-shadow: 0 14px 14px rgba(245, 56, 56, .2)
+        color: $white
+        display: inline-block
+        font-weight: 700
+        margin-top: 20px
+        padding: 13px 68px
+        text-align: center
+        transition: .25s color ease, .25s background ease
+
+        &:hover,
+        &:active,
+        &:focus
+            background: $white
+            color: $accent
+            text-decoration: none
+
+    &__img
+        img
+            max-height: 100%
+            max-width: 100%
+
+    &__info
+
+        box-shadow: 0 13px 11px rgba(0, 0, 0, .1)
+        margin-top: 120px
+
+        .col-md-4
+            padding: 30px 0
+
+            &:nth-child(2)
+
+                .info__block
+
+                    border-left: 2px solid $fairpink
+                    border-right: 2px solid $fairpink
+
+.info
+
+    &__block
+
+        display: flex
+        justify-content: center
+        padding: 25px 0
+
+    &__img
+        background: $fairpink
+        border-radius: 65px
+        color: $accent
+        height: 55px
+        line-height: 65px
+        text-align: center
+        width: 55px
+
+    &__stat
+        font-size: 30px
+        line-height: 35px
+        padding-left: 25px
+        width: 150px
+
+        &--num
+            color: $haiti
+
+    &__wrapper
+        align-items: center
+        display: flex
+
+
+//Features
+.features
+    padding: 50px 0
+
+    &__img
+        img
+            max-height: 100%
+            max-width: 100%
+
+    &__text
+        padding-left: 25px
+        padding-top: 40px
+
+    &__title
+        font-size: 40px
+        font-weight: 500
+        line-height: 50px
+
+    &__desc
+        font-size: 18px
+
+.list
+    display: flex
+    flex-direction: column
+
+    &__item
+        display: inline-flex
+        padding-top: 20px
+
+        &::before
+            content: url('../images/dest/bx_bxs-check-circle.svg')
+            margin-right: 10px
+
+
+//Plan
+.plan
+    padding: 70px 0
+
+    &__title
+        font-size: 40px
+        font-weight: 500
+        line-height: 50px
+        text-align: center
+
+    &__desc
+        font-size: 18px
+        margin: 0 auto
+        padding-bottom: 45px
+        padding-top: 10px
+        text-align: center
+        width: 55%
+
+    &__img
+        height: 167px
+        width: 146px
+
+    .owl-carousel
+        .owl-stage
+            box-sizing: border-box
+            display: flex
+            flex-wrap: wrap
+
+
+        .owl-item
+            display: flex
+            flex: 1 1 0
+            flex-shrink: 1
+            max-width: 100%
+            &:nth-child(1)
+                  .plan__img
+                    background-image: url('../images/dest/Free.svg')
+
+            &:nth-child(2)
+                  .plan__img
+                    background-image: url('../images/dest/Standard.svg')
+
+            &:nth-child(3)
+                  .plan__img
+                    background-image: url('../images/dest/Premium.svg')
+
+    &__col
+        border: 2px solid $alto
+        border-radius: 10px
+        display: flex
+        flex-direction: column
+        margin: 0 auto
+        padding-bottom: 155px
+        padding-top: 30px
+        position: relative
+        transition: border .25s ease
+        width: 320px
+
+        &:hover,
+        &:active,
+        &:focus
+            border: 2px solid $accent
+            cursor: pointer
+
+            .plan__button
+                background-color: $accent
+                color: $white
+                text-decoration: none
+
+
+    &__img
+        display: block
+        margin: 0 auto
+        max-height: 100%
+        max-width: 100%
+        padding: 20px 0
+
+    &__subtitle
+        font-size: 20px
+        padding: 15px 0
+        text-align: center
+
+    &-list
+        padding: 0 55px
+
+        &__item
+            display: flex
+            padding-top: 20px
+
+            &::before
+                content: url('../images/dest/jam_check.svg')
+
+    &__bottom
+        bottom: 5px
+        display: flex
+        flex-direction: column
+        left: 0
+        margin-left: auto
+        margin-right: auto
+        padding-bottom: 25px
+        position: absolute
+        right: 0
+        text-align: center
+
+    &__price
+        font-size: 20px
+        padding-top: 40px
+        text-align: center
+
+    &__button
+        background-color: $white
+        border: 2px solid $accent
+        border-radius: 25px
+        color: $accent
+        display: block
+        font-weight: 700
+        margin: 10px auto
+        padding: 7px 0
+        text-align: center
+        transition: background-color .25s ease, color .25s ease
+        width: 60%
+
+        &:hover,
+        &:active,
+        &:focus
+            background-color: $accent
+            color: $white
+            text-decoration: none
+
+
+//Global
+.global
+    padding: 70px 0
+
+    &__title
+        font-size: 40px
+        font-weight: 500
+        line-height: 50px
+        text-align: center
+
+    &__desc
+        font-size: 18px
+        margin: 0 auto
+        padding-bottom: 45px
+        padding-top: 10px
+        text-align: center
+        width: 55%
+
+    &__map
+        max-height: 100%
+        max-width: 100%
+        padding-bottom: 50px
+        padding-top: 75px
+
+    .owl-stage
+        display: flex
+
+        .owl-item
+            align-content: center
+            align-items: center
+            display: flex
+            flex-direction: column
+            justify-content: center
+
+            img
+                margin: auto
+                max-width: 100%
+                width: auto
+
+//Customers
+.customers
+    padding-bottom: 80px
+    padding-top: 20px
+
+    &__title
+        font-size: 40px
+        font-weight: 500
+        line-height: 50px
+        text-align: center
+
+    &__desc
+        font-size: 18px
+        margin: 0 auto
+        padding-bottom: 45px
+        padding-top: 10px
+        text-align: center
+        width: 55%
+
+    .owl-carousel
+
+        .owl-stage
+            display: flex
+
+        .owl-item
+            display: flex
+            flex: 1 1 0
+            flex-shrink: 1
+            flex-wrap: wrap
+            max-width: 100%
+
+            img
+                border-radius: 50px
+                height: 50px
+                object-fit: cover
+                width: 50px
+
+    .owl-nav
+        display: flex
+        justify-content: flex-end
+
+        button
+            margin-right: 20px
+            margin-top: 20px
+
+            span
+                background: $accent
+                border: 2px solid $accent
+                border-radius: 30px
+                color: $white
+                display: block
+                font-size: 30px
+                height: 45px
+                line-height: 45px
+                transition: background-color .25s ease, color .25s ease
+                width: 45px
+
+                &:hover,
+                &:active,
+                &:focus
+                    background-color: $white
+                    color: $accent
+
+        .disabled
+            span
+                background-color: $white
+                color: $accent
+
+                &:hover,
+                &:active,
+                &:focus
+                    background-color: $accent
+                    color: $white
+
+.customer
+    border: 2px solid $alto
+    border-radius: 10px
+    margin: 0 auto
+    padding: 20px
+    transition: border .25s ease
+    width: 355px
+
+    &:hover,
+    &:active,
+    &:focus
+        border: 2px solid $accent
+
+    &__bio
+        display: flex
+        padding-top: 10px
+
+        img
+            height: 50px
+            width: inherit
+
+    &__info
+        padding-left: 15px
+
+    &__title
+        margin: 0
+
+    &__geo
+        font-size: 14px
+        line-height: 10px
+        margin: 0
+
+    &__rate
+        align-self: center
+        margin-left: auto
+
+        &::after
+            content: url('../images/dest/star.svg')
+            padding-left: 10px
+
+    &__text
+        color: $haiti
+        margin-bottom: 0
+        padding-top: 10px
+
+
+
+//Subscribe
+.subscribe
+    position: relative
+
+    &__title
+        font-size: 40px
+        font-weight: 500
+        line-height: 50px
+
+    &__desc
+        font-size: 18px
+        padding-top: 10px
+
+    .row
+        background-color: $white
+        border-radius: 10px
+        box-shadow: 0 13px 11px rgba(0, 0, 0, .1)
+        padding: 15px
+
+    &__text
+        padding-left: 30px
+
+    &__background
+        background: $alabaster
+        bottom: 0
+        height: 50%
+        position: absolute
+        width: 100%
+        z-index: -1
+
+    &__button
+        background: $accent
+        border: 3px solid $accent
+        border-radius: 10px
+        box-shadow: 0 14px 14px rgba(245, 56, 56, .2)
+        color: $white
+        display: inline-block
+        font-weight: 700
+        margin-top: 20px
+        padding: 13px 68px
+        text-align: center
+        transition: .25s background ease, .25s color ease
+
+        &:hover,
+        &:active,
+        &:focus
+            background: $white
+            color: $accent
+            text-decoration: none
+
+        &-row
+            align-items: center
+            display: flex
+            justify-content: center
+
+
+//Footer
+.footer
+    background-color: $alabaster
+    padding-bottom: 100px
+    padding-top: 50px
+
+    &__container
+        display: flex
+        justify-content: space-between
+
+    &__subtitle
+        font-size: 18px
+        font-weight: 500
+
+    &__desc
+        display: block
+        margin-top: 20px
+        width: 340px
+
+    &__col
+        margin-right: 80px
+
+        &--right
+            display: flex
+            justify-content: space-between
+
+
+        &:last-child
+            margin-right: 0
+
+    &__item
+        padding: 5px 0
+
+    &__link
+        color: $textcolor
+        transition: color .25s ease
+
+        &:hover
+            color: $accent
+            text-decoration: none
+
+    &__copyright
+        color: $cadetblue
+        display: block
+        margin-top: 30px
+
+.social
+    padding: 10px 0
+
+    &__item
+        display: inline-block
+        margin-left: 20px
+
+        &:first-child
+            margin-left: 0
+
+    &__link
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        border-radius: 20px
+        box-shadow: 0 14px 14px rgba(245, 56, 56, .2)
+        display: block
+        height: 40px
+        line-height: 40px
+        text-align: center
+        transition: background-color .25s ease, color .25s ease
+        width: 40px
+
+        &--fb
+            background-image: url('../images/dest/Facebook.svg')
+
+        &--tw
+            background-image: url('../images/dest/Twitter.svg')
+
+        &--inst
+            background-image: url('../images/dest/Instagram.svg')
+
+
+
+
+//Media queries
+@media only screen and (max-width: 1194px)
+    .plan
+
+        &__col
+            width: 270px
+
+        .list
+            padding: 0 30px
+
+
+@media only screen and (max-width: 992px)
+
+    .button__sign-in
+        display: none
+
+
+    .footer
+
+        &__col
+            margin-right: 50px
+
+            &:last-child
+                margin-right: 0
+
+
+
+@media only screen and (max-width: 767px)
+
+    .header
+        background-color: $white
+        flex-wrap: wrap
+        left: 0
+        position: fixed
+        right: 0
+        top: 0
+        width: 100%
+        z-index: 50
+
+        &__buttons
+            display: none
+
+        &__btn
+            display: inherit
+            margin-right: 46px
+
+        &__logo
+            margin-left: 46px
+
+
+        &__nav
+            position: absolute
+            right: 0
+            background-color: rgba(255, 255, 255, .8)
+            display: block
+            transition: top .6s, visibility .6s
+            visibility: hidden
+            width: 100vw
+            top: -100vh
+
+            &--active
+                height: 100vh
+                visibility: visible
+                overflow-y: auto
+                position: fixed
+                top: 0
+                z-index: 50
+                opacity: 1
+
+
+    .hidden
+        display: block
+
+    .menu
+        flex-direction: column
+        font-size: 25px
+        margin-top: 10vh
+        text-align: center
+
+        &__item
+            padding: 12px 0
+
+
+
+    .start
+
+        &__info
+
+            .col-md-4
+                margin-top: 20px
+
+                &:nth-child(2)
+                    border-bottom: 2px solid $fairpink
+                    border-top: 2px solid $fairpink
+
+                    .info__block
+                        border: 0
+
+        &__title
+            font-size: 35px
+            line-height: 45px
+
+
+
+    .features
+
+        &__text
+            padding-left: 0
+
+        &__title
+            font-size: 30px
+            line-height: 40px
+
+            br
+                display: none
+
+
+
+    .plan
+
+        &__title
+            font-size: 30px
+            line-height: 40px
+
+        &__desc
+            width: 75%
+
+        &__col
+            min-width: auto
+            width: auto
+
+        &__list
+            display: inline-block
+            margin: 0 auto
+
+
+
+    .global
+
+        &__title
+            font-size: 30px
+            line-height: 40px
+
+            br
+                display: none
+
+        &__desc
+            width: 75%
+
+
+
+    .customers
+
+        &__title
+            font-size: 30px
+            line-height: 40px
+
+            br
+                display: none
+
+        &__desc
+            width: 75%
+
+    .customer
+        min-width: 100%
+        width: inherit
+
+
+
+    .subscribe
+
+        &__title
+            font-size: 30px
+            line-height: 40px
+
+            br
+                display: none
+
+
+    .footer
+
+        &__container
+            flex-direction: column
+
+        &__desc
+            width: auto
+
+        &__col
+            margin-right: 0
+
+            &--right
+                flex-direction: column
+
+
+
+@media only screen and (max-width: 575px)
+    .header
+
+        &__logo
+            margin-left: 0
+
+        &__btn
+            margin-right: 10px
