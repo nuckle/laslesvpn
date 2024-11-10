@@ -48,6 +48,7 @@ const scss         = require('gulp-sass');
 const less         = require('gulp-less');
 const styl         = require('gulp-stylus');
 const cleancss     = require('gulp-clean-css');
+const ssi          = require('ssi')
 const concat       = require('gulp-concat');
 const browserSync  = require('browser-sync').create();
 const uglify       = require('gulp-uglify-es').default;
@@ -94,6 +95,26 @@ function cleanimg() {
 	return del('' + paths.images.dest + '/**/*', { force: true })
 }
 
+function buildcopy() {
+	return src([
+		'{app/js,app/css}/*.min.*',
+		'app/images/**/*.*',
+		'!app/images/src/**/*',
+		'app/fonts/**/*'
+	], { base: 'app/' })
+	.pipe(dest('dist'))
+}
+
+async function buildhtml() {
+	let includes = new ssi('app/', 'dist/', '/**/*.html')
+	includes.compile()
+	del('dist/parts', { force: true })
+}
+
+function cleandist() {
+	return del('dist/**/*', { force: true })
+}
+
 function deploy() {
 	return src(baseDir + '/')
 	.pipe(rsync({
@@ -123,4 +144,5 @@ exports.scripts     = scripts;
 exports.images      = images;
 exports.cleanimg    = cleanimg;
 exports.deploy      = deploy;
+exports.build       = series(cleandist, scripts, styles, images, buildcopy, buildhtml)
 exports.default     = parallel(images, styles, scripts, browsersync, startwatch);
